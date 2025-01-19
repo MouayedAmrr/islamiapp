@@ -198,7 +198,6 @@ class _QuranTabState extends State<QuranTab> {
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) => SuraCardWidget(
                     recentData: searchSuraModels[index],
-                    index: "${index + 1}",
                   ),
                   separatorBuilder: (context, index) => const Divider(
                     endIndent: 50,
@@ -246,7 +245,6 @@ class _QuranTabState extends State<QuranTab> {
                       physics: const NeverScrollableScrollPhysics(),
                       itemBuilder: (context, index) => SuraCardWidget(
                         recentData: recentData[index],
-                        index: "${index + 1}",
                       ),
                       separatorBuilder: (context, index) => const Divider(
                         endIndent: 50,

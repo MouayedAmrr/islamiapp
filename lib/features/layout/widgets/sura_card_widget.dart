@@ -3,8 +3,7 @@ import 'package:islamiapp/models/recent_data.dart';
 
 class SuraCardWidget extends StatelessWidget {
   final RecentData recentData;
-  final String index;
-  const SuraCardWidget({super.key, required this.recentData, required this.index});
+  const SuraCardWidget({super.key, required this.recentData,});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class SuraCardWidget extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Image.asset("assets/icons/suraNumIcn.png"),
-                Text(index,
+                Text(recentData.id as String,
                     style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,
