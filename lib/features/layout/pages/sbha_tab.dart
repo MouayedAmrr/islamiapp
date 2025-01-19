@@ -88,7 +88,7 @@ class _SbhaTabState extends State<SbhaTab> {
     counter++;
     angle -=10;
 
-    if (counter == 34){
+    if (counter == 33){
       counter=0;
       currentIndex++;
       if (currentIndex == 3) currentIndex =0;

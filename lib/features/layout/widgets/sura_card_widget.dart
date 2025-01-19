@@ -11,14 +11,14 @@ class SuraCardWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 6),
       child: Row(
         children: [
-          Container(
+          SizedBox(
             height: 55,
             width: 60,
             child: Stack(
               alignment: Alignment.center,
               children: [
                 Image.asset("assets/icons/suraNumIcn.png"),
-                Text(recentData.id as String,
+                Text("${recentData.id}" ,
                     style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w700,

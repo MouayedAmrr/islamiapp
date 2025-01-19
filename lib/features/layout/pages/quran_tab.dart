@@ -142,120 +142,122 @@ class _QuranTabState extends State<QuranTab> {
       child: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const islamiLogo(),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  onChanged: (value) {
-                    searchQuery = value;
-                    search();
-                    setState(() {});
-                  },
-                  cursorColor: appColors.primary,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    fontSize: 16,
-                    color: Colors.white,
-                  ),
-                  decoration: InputDecoration(
-                    hintText: "Sura Name",
-                    hintStyle: const TextStyle(
+          child: SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const islamiLogo(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    onChanged: (value) {
+                      searchQuery = value;
+                      search();
+                      setState(() {});
+                    },
+                    cursorColor: appColors.primary,
+                    style: const TextStyle(
                       fontWeight: FontWeight.w700,
                       fontSize: 16,
                       color: Colors.white,
                     ),
-                    fillColor: appColors.secondary.withOpacity(0.5),
-                    filled: true,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: appColors.primary,
+                    decoration: InputDecoration(
+                      hintText: "Sura Name",
+                      hintStyle: const TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: Colors.white,
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: appColors.primary,
+                      fillColor: appColors.secondary.withOpacity(0.5),
+                      filled: true,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: appColors.primary,
+                        ),
                       ),
-                    ),
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: ImageIcon(
-                        const AssetImage(Assets.iconsQuran),
-                        color: appColors.primary,
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide(
+                          color: appColors.primary,
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-              ),
-              Visibility(
-                visible: searchQuery.isEmpty,
-                replacement: ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => SuraCardWidget(
-                    recentData: searchSuraModels[index],
-                  ),
-                  separatorBuilder: (context, index) => const Divider(
-                    endIndent: 50,
-                    indent: 50,
-                  ),
-                  itemCount: searchSuraModels.length,
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        "Most Recently",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ImageIcon(
+                          const AssetImage(Assets.iconsQuran),
+                          color: appColors.primary,
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 155,
-                      child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) => RecentCardWidget(
+                  ),
+                ),
+                Visibility(
+                  visible: searchQuery.isEmpty,
+                  replacement: ListView.separated(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) => SuraCardWidget(
+                      recentData: searchSuraModels[index],
+                    ),
+                    separatorBuilder: (context, index) => const Divider(
+                      endIndent: 50,
+                      indent: 50,
+                    ),
+                    itemCount: searchSuraModels.length,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          "Most Recently",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 155,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) => RecentCardWidget(
+                            recentData: recentData[index],
+                          ),
+                          itemCount: recentData.length,
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 20,),
+                        child: Text(
+                          "Suras List",
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      ListView.separated(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) => SuraCardWidget(
                           recentData: recentData[index],
+                        ),
+                        separatorBuilder: (context, index) => const Divider(
+                          endIndent: 50,
+                          indent: 50,
                         ),
                         itemCount: recentData.length,
                       ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(left: 10, top: 20),
-                      child: Text(
-                        "Suras List",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    ListView.separated(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) => SuraCardWidget(
-                        recentData: recentData[index],
-                      ),
-                      separatorBuilder: (context, index) => const Divider(
-                        endIndent: 50,
-                        indent: 50,
-                      ),
-                      itemCount: recentData.length,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
