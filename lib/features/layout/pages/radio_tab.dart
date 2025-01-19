@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/core/constants/assets.dart';
 
 class RadioTab extends StatelessWidget {
   const RadioTab({super.key});
@@ -6,7 +7,10 @@ class RadioTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.orange,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage(Assets.backgroundRadioBG), fit: BoxFit.cover),
+      ),
     );
   }
 }

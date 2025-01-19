@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/core/constants/assets.dart';
 
 class TimesTab extends StatelessWidget {
   const TimesTab({super.key});
@@ -6,7 +7,10 @@ class TimesTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+            image: AssetImage(Assets.backgroundTimesBG), fit: BoxFit.cover),
+      ),
     );
   }
 }

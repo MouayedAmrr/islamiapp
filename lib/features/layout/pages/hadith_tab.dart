@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/core/constants/assets.dart';
+import 'package:islamiapp/features/layout/widgets/islami_logo_widget.dart';
 
 class HadithTab extends StatelessWidget {
   const HadithTab({super.key});
@@ -12,26 +13,7 @@ class HadithTab extends StatelessWidget {
       ),
       child: Column(
         children: [
-          SafeArea(
-            child: Stack(
-              children: [
-                Center(
-                    child: Image.asset(
-                      "assets/splash/Mosque.png",
-                      width: 300,
-                    )),
-                Container(
-                  margin: const EdgeInsets.symmetric(vertical: 60),
-                  child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Image.asset(
-                        "assets/splash/Islami.png",
-                        width: 150,
-                      )),
-                ),
-              ],
-            ),
-          ),
+          islamiLogo(),
         ],
       ),
     );
