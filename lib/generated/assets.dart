@@ -2,6 +2,7 @@
 class Assets {
   Assets._();
 
+  static const String assetsHadithCard = 'assets/HadithCard.png';
   static const String assetsQuranIMG = 'assets/quranIMG.png';
   static const String assetsSbhaHead = 'assets/sbhaHead.png';
   static const String assetsSebhaBody = 'assets/SebhaBody.png';

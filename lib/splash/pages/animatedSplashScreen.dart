@@ -2,19 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:islamiapp/splash/pages/onBoard.dart';
 
-class AnimatedSplashScreen extends StatelessWidget {
+class AnimatedSplashScreen extends StatefulWidget {
   const AnimatedSplashScreen({super.key});
+
+  @override
+  State<AnimatedSplashScreen> createState() => _AnimatedSplashScreenState();
+}
+
+class _AnimatedSplashScreenState extends State<AnimatedSplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(Duration(seconds: 3), () {
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const onBoard()),
+        );
+      }
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     var _duration = Duration(milliseconds: 2500);
-    Future.delayed(const Duration(milliseconds: 3000), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const onBoard()),
-      );
-    });
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
