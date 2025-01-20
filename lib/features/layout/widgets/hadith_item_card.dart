@@ -5,6 +5,26 @@ class hadithCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(
+        bottom: 10,
+      ),
+      decoration: const BoxDecoration(
+        image: DecorationImage(image: AssetImage("assets/HadithCard.png"),fit: BoxFit.fitWidth),
+      ),
+      child: Column(
+        children: [
+          SizedBox(height: 30,),
+          Text(
+            "الحديث الأول",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
