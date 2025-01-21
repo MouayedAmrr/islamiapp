@@ -8,7 +8,7 @@ import 'package:islamiapp/features/layout/widgets/sura_card_widget.dart';
 import 'package:islamiapp/models/recent_data.dart';
 
 class QuranTab extends StatefulWidget {
-  QuranTab({super.key});
+  const QuranTab({super.key});
 
   @override
   State<QuranTab> createState() => _QuranTabState();
@@ -471,7 +471,7 @@ class _QuranTabState extends State<QuranTab> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const quranDetails())
+                                builder: (context) => quranDetails(quranData: recentData[index],))
                         );
                       },
                       child: SuraCardWidget(
@@ -532,7 +532,7 @@ class _QuranTabState extends State<QuranTab> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const quranDetails())
+                                    builder: (context) => quranDetails(quranData: recentData[index]))
                             );
                           },
                           child: SuraCardWidget(
@@ -555,7 +555,6 @@ class _QuranTabState extends State<QuranTab> {
       ),
     );
   }
-
   void search() {
     searchSuraModels = [];
     for (RecentData sura in recentData) {

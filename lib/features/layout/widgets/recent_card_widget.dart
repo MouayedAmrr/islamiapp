@@ -20,21 +20,21 @@ class RecentCardWidget extends StatelessWidget {
             children: [
               Text(
                 recentData.suraNameEN,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 24,
                     fontFamily: "Janna",
                     fontWeight: FontWeight.w700),
               ),
               Text(
                 recentData.suraNameAR,
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 24,
                     fontFamily: "Janna",
                     fontWeight: FontWeight.w700),
               ),
               Text(
                 "${recentData.suraVerses} Verses",
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 14,
                     fontFamily: "Janna",
                     fontWeight: FontWeight.w700),
