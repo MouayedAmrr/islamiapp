@@ -32,6 +32,7 @@ class _SbhaTabState extends State<SbhaTab> {
           const Text(
             "سَبِّحِ اسْمَ رَبِّكَ الأعلى ",
             style: TextStyle(
+              fontFamily: "Janna",
               fontWeight: FontWeight.w700,
               fontSize: 36,
               color: Colors.white,
@@ -68,6 +69,7 @@ class _SbhaTabState extends State<SbhaTab> {
                                 "${list[currentIndex]} \n$counter",
                                 style: const TextStyle(
                                   fontSize: 32,
+                                  fontFamily: "Janna",
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                 ),

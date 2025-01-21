@@ -3,12 +3,15 @@ import 'package:islamiapp/models/recent_data.dart';
 
 class SuraCardWidget extends StatelessWidget {
   final RecentData recentData;
-  const SuraCardWidget({super.key, required this.recentData,});
+  const SuraCardWidget({
+    super.key,
+    required this.recentData,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       child: Row(
         children: [
           SizedBox(
@@ -18,12 +21,13 @@ class SuraCardWidget extends StatelessWidget {
               alignment: Alignment.center,
               children: [
                 Image.asset("assets/icons/suraNumIcn.png"),
-                Text("${recentData.id}" ,
-                    style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white
-                  ),
+                Text(
+                  "${recentData.id}",
+                  style: const TextStyle(
+                      fontSize: 20,
+                      fontFamily: "Janna",
+                      fontWeight: FontWeight.w700,
+                      color: Colors.white),
                 ),
               ],
             ),
@@ -37,10 +41,10 @@ class SuraCardWidget extends StatelessWidget {
               Text(
                 recentData.suraNameEN,
                 style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white
-                ),
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: "Janna",
+                    color: Colors.white),
               ),
               const SizedBox(
                 height: 6,
@@ -50,8 +54,8 @@ class SuraCardWidget extends StatelessWidget {
                 style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
-                    color: Colors.white
-                ),
+                    fontFamily: "Janna",
+                    color: Colors.white),
               ),
             ],
           ),
@@ -59,10 +63,7 @@ class SuraCardWidget extends StatelessWidget {
           Text(
             recentData.suraNameAR,
             style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: Colors.white
-            ),
+                fontSize: 20, fontWeight: FontWeight.w700,fontFamily: "Janna", color: Colors.white),
           ),
         ],
       ),

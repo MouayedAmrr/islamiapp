@@ -7,7 +7,7 @@ class Assets {
   static const String backgroundQuranBG = 'assets/background/quranBG.png';
   static const String backgroundRadioBG = 'assets/background/RadioBG.png';
   static const String backgroundSbhaBG = 'assets/background/sbhaBG.png';
-  static const String backgroundSouraDetailsBG = 'assets/background/SouraDetailsBG.png';
+  static const String backgroundSouraDetailsBG = 'assets/background/SouraDetails.png';
   static const String backgroundTimesBG = 'assets/background/timesBG.png';
 
   static const String iconsHadith = 'assets/icons/hadith.png';

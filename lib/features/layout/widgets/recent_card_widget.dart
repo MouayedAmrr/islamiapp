@@ -3,7 +3,6 @@ import 'package:islamiapp/core/theme/appColors.dart';
 import 'package:islamiapp/models/recent_data.dart';
 
 class RecentCardWidget extends StatelessWidget {
-
   final RecentData recentData;
   const RecentCardWidget({super.key, required this.recentData});
 
@@ -21,15 +20,24 @@ class RecentCardWidget extends StatelessWidget {
             children: [
               Text(
                 recentData.suraNameEN,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontFamily: "Janna",
+                    fontWeight: FontWeight.w700),
               ),
               Text(
                 recentData.suraNameAR,
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
+                style: TextStyle(
+                    fontSize: 24,
+                    fontFamily: "Janna",
+                    fontWeight: FontWeight.w700),
               ),
               Text(
                 "${recentData.suraVerses} Verses",
-                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+                style: TextStyle(
+                    fontSize: 14,
+                    fontFamily: "Janna",
+                    fontWeight: FontWeight.w700),
               ),
             ],
           ),
