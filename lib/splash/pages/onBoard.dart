@@ -19,7 +19,7 @@ class _onBoardState extends State<onBoard> {
   @override
   void initState(){
     super.initState();
-    LocalStorageService.setBool(LocalStorageKeys.isFirstTimeRun,true);
+    LocalStorageService.setBool(LocalStorageKeys.isFirstTimeRun,false);
 
   }
 
