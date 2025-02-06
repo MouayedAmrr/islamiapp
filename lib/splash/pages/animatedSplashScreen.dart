@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:islamiapp/core/constants/local_storage_keys.dart';
+import 'package:islamiapp/core/services/local_storage_service.dart';
+import 'package:islamiapp/features/layout/pages/layoutPage.dart';
 import 'package:islamiapp/splash/pages/onBoard.dart';
 
 class AnimatedSplashScreen extends StatefulWidget {
@@ -16,9 +19,13 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen> {
 
     Future.delayed(Duration(seconds: 3), () {
       if (mounted) {
+        bool isFirstTime=
+            LocalStorageService.getBool(LocalStorageKeys.isFirstTimeRun)??
+                true ;
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const onBoard()),
+          isFirstTime?
+          MaterialPageRoute(builder: (context) => const onBoard()):MaterialPageRoute(builder: (context) => const layoutPage()),
         );
       }
     });

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/core/constants/local_storage_keys.dart';
 import 'package:islamiapp/core/theme/appColors.dart';
 import 'package:islamiapp/features/layout/pages/layoutPage.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:islamiapp/core/services/local_storage_service.dart';
 
 class onBoard extends StatefulWidget {
   const onBoard({super.key});
@@ -17,7 +19,7 @@ class _onBoardState extends State<onBoard> {
   @override
   void initState(){
     super.initState();
-    LocaleStorageService.setBool();
+    LocalStorageService.setBool(LocalStorageKeys.isFirstTimeRun,true);
 
   }
 
