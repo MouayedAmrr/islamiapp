@@ -13,6 +13,14 @@ class onBoard extends StatefulWidget {
 class _onBoardState extends State<onBoard> {
   final PageController _pageController = PageController();
   int _currentIndex = 0;
+
+  @override
+  void initState(){
+    super.initState();
+    LocaleStorageService.setBool();
+
+  }
+
   List logo = [
     "assets/onboarding_icons/welcome.png",
     "assets/onboarding_icons/kabba.png",

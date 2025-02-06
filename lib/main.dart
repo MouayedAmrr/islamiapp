@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:islamiapp/core/services/local_storage_service.dart';
 import 'package:islamiapp/splash/pages/animatedSplashScreen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await LocalStorageService.init();
   runApp(const MyApp());
 }
 
